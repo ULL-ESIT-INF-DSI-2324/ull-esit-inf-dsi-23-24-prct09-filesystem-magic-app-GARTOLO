@@ -9,7 +9,6 @@ export class CSVKnapSack extends KnapSackReader {
       this.filename = filename
     }
   
-  
     /**
      * @method procesar - get the data from JSON and create the KnapSack problem
      */

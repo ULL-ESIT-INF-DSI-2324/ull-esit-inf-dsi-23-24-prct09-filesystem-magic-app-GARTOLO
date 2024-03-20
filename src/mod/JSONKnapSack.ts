@@ -34,6 +34,7 @@ export class JSONKnapSack extends KnapSackReader {
           this.wheights.push(element.peso);
           this.benefits.push(element.beneficio);
         });
+
       }
     });
   }

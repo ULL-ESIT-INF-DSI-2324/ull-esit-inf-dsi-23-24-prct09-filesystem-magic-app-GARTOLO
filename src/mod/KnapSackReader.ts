@@ -29,7 +29,7 @@ export abstract class KnapSackReader {
     }
 
     /**
-     * @method solve - Solves the KnapSack problem
+     * @method solve - Solves the KnapSack problem - Solve is not necesary on this modification, misunderstood
      * @returns two arrays with the benefits and wheights
      */
     protected solve() {
