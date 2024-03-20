@@ -21,7 +21,7 @@ export abstract class KnapSackReader {
      */
     public run() {
       this.procesar();
-      return this.solve()
+      return this.solve();
     }
 
     /**
