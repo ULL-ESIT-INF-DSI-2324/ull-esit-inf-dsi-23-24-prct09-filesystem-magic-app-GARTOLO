@@ -1,4 +1,6 @@
-import { KnapSackReader, JSONKnapSack, CSVKnapSack } from "./KnapSackReader.js";
+import { KnapSackReader } from "./KnapSackReader.js";
+import { JSONKnapSack } from "./JSONKnapSack.js"
+import { CSVKnapSack } from "./CSVKnapSack.js"
 
 function resolveKnapSack(knapSackReader: KnapSackReader) {
     knapSackReader.run();

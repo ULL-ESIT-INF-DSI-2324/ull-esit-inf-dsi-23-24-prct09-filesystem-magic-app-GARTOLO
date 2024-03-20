@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { CSVKnapSack } from "../../src/mod/KnapSackReader.js"
+import { CSVKnapSack } from "../../src/mod/CSVKnapSack.js"
 
 describe ("CSV Tests", () => {
     const route: string = "./tests/test.csv"

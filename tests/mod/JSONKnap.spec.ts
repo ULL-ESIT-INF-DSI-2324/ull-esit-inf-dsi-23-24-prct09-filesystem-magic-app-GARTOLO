@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { JSONKnapSack } from "../../src/mod/KnapSackReader.js"
+import { JSONKnapSack } from "../../src/mod/JSONKnapSack.js"
 
 describe ("JSON Tests", () => {
     const route: string = "./tests/test.json"
