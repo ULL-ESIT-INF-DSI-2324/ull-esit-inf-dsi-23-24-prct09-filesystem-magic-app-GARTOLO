@@ -18,6 +18,8 @@ Guillermo Emmanuel González Méndez - alu0101466941
 
 ## Desarrollo de la práctica
 
+- Como curiosidad, a partir de la [versión 21.7.0](https://nodejs.org/en/blog/release/v21.7.0) de Node.js, se ha añadido `styleText`, para añadir estilos a los textos de la consola, de forma nativa por lo que no es necesario instalar ningún paquete adicional. Estos cambios además serán incluidos en la versión 22 de mediados de abril, que será LTS.
+
 ### Ejercicio 1
 
 ### Ejercicio 2
