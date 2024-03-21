@@ -1,0 +1,3 @@
+node dist/magic-app.js add --user "gegm" --id 1 --name "Black Lotus" --mana_cost 10000 --colour Green --rarity Common --text "test" --type "Land" --value 3
+
+node dist/magic-app.js add --user "gegm" --id 1 --name "Black Lotus" --mana_cost 10000 --colour Green --rarity Common --text "test" --type "Creature" --value 3 --strength 12 --resistance 11 

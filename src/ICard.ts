@@ -36,7 +36,6 @@ export interface ICardBase {
   type: CardType
   rarity: CardRarity;
   text: string;
-  strength: number | null;
   value: number;
 }
 

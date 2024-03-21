@@ -1,5 +1,8 @@
 import {CommandModule} from 'yargs';
-import {CardColour, CardRarity, CardType, ICreatureCard} from "../ICard.js";
+import { ICard } from "../ICard.js";
+import { createICard } from './createICard.js';
+import chalk from 'chalk';
+import { addCard } from '../fileManager/addCard.js';
 
 export const addCommand: CommandModule = {
   command: 'add',
@@ -13,6 +16,11 @@ export const addCommand: CommandModule = {
     id: {
       description: 'Card ID',
       type: 'number',
+      demandOption: true
+    },
+    name: {
+      description: 'Card name',
+      type: 'string',
       demandOption: true
     },
     mana_cost: {
@@ -64,44 +72,48 @@ export const addCommand: CommandModule = {
   handler: (argv) => {
     console.log("Add card with ID: " + argv.id + " for user: " + argv.user);
 
-  if (argv.type === "Creature" || argv.type === "creature") {
+    if (argv.type === "Creature" || argv.type === "creature") {
       // Make sure strength and resistance are provided
       if (argv.strength === undefined || argv.resistance === undefined) {
-        console.error("Creature card must have strength and resistance");
-        process.exit(1);
-      }
-
-      // Check if Colour exist ond CardColour enum
-      if (!Object.values(CardColour).includes(argv.colour as CardColour)) {
-        console.error("Invalid card colour");
+        console.error(chalk.red.bold("Creature card must have strength and resistance"));
         process.exit(1);
       }
 
       // Create a creature card
-      const card: ICreatureCard = {
-        id: Number(argv.id),
-        name: String(argv.name),
-        manaCost: Number(argv.mana_cost),
-        colour: argv.colour as CardColour,
-        type: argv.type as CardType.Creature,
-        rarity: argv.rarity as CardRarity,
-        text: String(argv.text),
-        value: Number(argv.value),
-        strength: Number(argv.strength),
-        resistance: Number(argv.resistance)
-      };
-
-      // Add card to the collection (json file)
-    
+      let card: ICard;
+      try {
+        card = createICard(
+          Number(argv.id), 
+          String(argv.name),
+          Number(argv.mana_cost),
+          String(argv.colour),
+          String(argv.type),
+          String(argv.rarity),
+          String(argv.text),
+          Number(argv.value),
+          Number(argv.strength),
+          Number(argv.resistance)
+        );
+      } catch (error) {
+        if (error instanceof Error)
+          console.error(chalk.red.bold("Error:", error.message));
+        process.exit(1);
+      }
+      
+      // Add card to the collection (json file with the fs sincronous api)
+      addCard(card, String(argv.user));
     } else if (argv.type === "Planeswalker" || argv.type === "planeswalker") {
       // Make sure loyalty is provided
       if (argv.loyalty === undefined) {
-        console.error("Planeswalker card must have loyalty");
+        console.error(chalk.red.bold("Planeswalker card must have loyalty"));
         process.exit(1);
       }
 
+      // TODO
+    } else {
+      // TODO
+      console.log("Adding normal card");
     }
   }
 }
-
 
