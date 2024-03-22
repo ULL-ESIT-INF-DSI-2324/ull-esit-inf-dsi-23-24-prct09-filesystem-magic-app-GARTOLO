@@ -5,3 +5,5 @@ node dist/magic-app.js add --user "gegm" --id 1 --name "Black Lotus" --mana_cost
 node .\dist\magic-app.js list --user gegm
 
 node .\dist\magic-app.js show --user gegm --id 1
+
+node .\dist\magic-app.js remove --user gegm --id 1

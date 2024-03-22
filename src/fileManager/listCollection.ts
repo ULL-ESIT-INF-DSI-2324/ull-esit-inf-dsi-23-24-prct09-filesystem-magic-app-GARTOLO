@@ -9,19 +9,24 @@ import { printCard } from "../functions/printCard.js";
  * @param user name of the user
  */
 export function listCollection(user: string) {
-  // Check if the collection file exists
-  if (!fs.existsSync(`./${dir}/${user}-collection.json`)) {
-    console.error(chalk.red.bold("Collection not found"));
+  const userDir = `${dir}/${user}`;
+  // Check if the user directory exists
+  if (!fs.existsSync(userDir)) {
+    console.error(chalk.red.bold("User does not exist"));
     process.exit(1);
   }
 
-  // Read the collection from the file
-  const collection = JSON.parse(
-    fs.readFileSync(`./${dir}/${user}-collection.json`, "utf-8"),
-  );
+  // Read all files in the user directory to get the cards
+  console.log(chalk.green.bold("Collection for", user));
+
+  const files = fs.readdirSync(userDir);
+  const collection: ICard[] = [];
+  files.forEach((file) => {
+    const card = JSON.parse(fs.readFileSync(`${userDir}/${file}`, "utf-8"));
+    collection.push(card);
+  });
 
   // Print the collection
-  console.log(chalk.green.bold("Collection for", user));
 
   if (collection.length === 0) {
     console.log(chalk.yellow.bold("No cards in the collection"));

@@ -9,34 +9,17 @@ import fs from "fs";
  * @param user name of the user
  */
 export function addCard(card: ICard, user: string) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
+  const userDir = `${dir}/${user}`;
+  if (!fs.existsSync(userDir)) {
+    fs.mkdirSync(userDir);
   }
 
-  // Check if the collection file exists
-  if (!fs.existsSync(`./${dir}/${user}-collection.json`)) {
-    fs.writeFileSync(`./${dir}/${user}-collection.json`, "[]");
-  }
-
-  // Read the collection from the file
-  const collection = JSON.parse(
-    fs.readFileSync(`./${dir}/${user}-collection.json`, "utf-8"),
-  );
-
-  // Check if the card already exists
-  if (collection.find((c: ICard) => c.id === card.id)) {
-    console.error(chalk.red.bold("Card already exists in the collection"));
+  // Create the card file if it doesn't exist
+  if (!fs.existsSync(`./${userDir}/${card.id}.json`)) {
+    fs.writeFileSync(`./${userDir}/${card.id}.json`, JSON.stringify(card, null, 2));
+    console.log(chalk.green.bold("Card added to the", user, "collection."));
+  } else {
+    console.error(chalk.red.bold("Card already exists"));
     process.exit(1);
   }
-
-  // Add the card to the collection
-  collection.push(card);
-
-  // Write the collection back to the file
-  fs.writeFileSync(
-    `./${dir}/${user}-collection.json`,
-    JSON.stringify(collection, null, 2),
-  );
-
-  console.log(chalk.green.bold("Card added to the", user, "collection."));
 }
