@@ -15,7 +15,19 @@ import { CardColour, CardRarity, CardType, ICard } from "../ICard.js";
  * @param loyalty Card loyalty (optional)
  * @returns ICard object
  */
-export function createICard(id: number, name: string, mana_cost: number, colour: string, type: string, rarity: string, text: string, value: number, strength?: number, resistance?: number, loyalty?: number): ICard {
+export function createICard(
+  id: number,
+  name: string,
+  mana_cost: number,
+  colour: string,
+  type: string,
+  rarity: string,
+  text: string,
+  value: number,
+  strength?: number,
+  resistance?: number,
+  loyalty?: number,
+): ICard {
   // Check if the colour is valid
   if (!Object.values(CardColour).includes(colour as CardColour)) {
     throw new Error("Invalid colour");
@@ -30,7 +42,7 @@ export function createICard(id: number, name: string, mana_cost: number, colour:
   if (!Object.values(CardRarity).includes(rarity as CardRarity)) {
     throw new Error("Invalid rarity");
   }
- 
+
   let card: ICard;
   // Create the card depending on the type
   if (type === CardType.Creature) {
@@ -44,7 +56,7 @@ export function createICard(id: number, name: string, mana_cost: number, colour:
       text: text,
       value: value,
       strength: strength,
-      resistance: resistance
+      resistance: resistance,
     };
   } else if (type === CardType.Planeswalker) {
     card = {
@@ -56,7 +68,7 @@ export function createICard(id: number, name: string, mana_cost: number, colour:
       rarity: rarity as CardRarity,
       text: text,
       value: value,
-      loyalty: loyalty
+      loyalty: loyalty,
     };
   } else {
     card = {
@@ -67,7 +79,7 @@ export function createICard(id: number, name: string, mana_cost: number, colour:
       type: type as CardType,
       rarity: rarity as CardRarity,
       text: text,
-      value: value
+      value: value,
     };
   }
 

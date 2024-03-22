@@ -1,26 +1,31 @@
-import {CommandModule} from "yargs";
+import { CommandModule } from "yargs";
 import chalk from "chalk";
-import {dir} from "../magic-app.js";
+import { dir } from "../magic-app.js";
 import fs from "fs";
-import {printCard} from "./printCard.js";
+import { printCard } from "./printCard.js";
 
+/**
+ * Command module to show a card in the collection
+ */
 export const showCommand: CommandModule = {
-  command: 'show',
-  describe: 'Show a card in the collection',
+  command: "show",
+  describe: "Show a card in the collection",
   builder: {
     user: {
-      description: 'User name',
-      type: 'string',
-      demandOption: true
+      description: "User name",
+      type: "string",
+      demandOption: true,
     },
     id: {
-      description: 'Card ID',
-      type: 'number',
-      demandOption: true
-    }
+      description: "Card ID",
+      type: "number",
+      demandOption: true,
+    },
   },
   handler: (argv) => {
-    console.log("Show card with ID: " + argv.id + " for user: " + argv.user);
+    console.log(
+      chalk.blue("Show card with ID: " + argv.id + " for user: " + argv.user),
+    );
 
     // Check if the collection and card exist
     if (!fs.existsSync(`./${dir}/${argv.user}-collection.json`)) {
@@ -28,8 +33,10 @@ export const showCommand: CommandModule = {
       process.exit(1);
     }
 
-    const collection = JSON.parse(fs.readFileSync(`./${dir}/${argv.user}-collection.json`, 'utf-8'));
-    const card = collection.find((c: { id: number; }) => c.id === argv.id);
+    const collection = JSON.parse(
+      fs.readFileSync(`./${dir}/${argv.user}-collection.json`, "utf-8"),
+    );
+    const card = collection.find((c: { id: number }) => c.id === argv.id);
 
     if (!card) {
       console.error(chalk.red.bold("Card not found"));
@@ -37,5 +44,5 @@ export const showCommand: CommandModule = {
     }
 
     printCard(card);
-  }
-}
+  },
+};

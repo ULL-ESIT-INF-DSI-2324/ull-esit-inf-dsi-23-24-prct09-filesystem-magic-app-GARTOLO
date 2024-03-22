@@ -5,14 +5,14 @@ export enum CardColour {
   Red = "Red",
   Green = "Green",
   Colourless = "Colourless",
-  MultiColour = "MultiColour"
+  MultiColour = "MultiColour",
 }
 
 export enum CardRarity {
   Common = "Common",
   Uncommon = "Uncommon",
   Rare = "Rare",
-  Mythic = "Mythic"
+  Mythic = "Mythic",
 }
 
 export enum CardType {
@@ -22,7 +22,7 @@ export enum CardType {
   Instant = "Instant",
   Sorcery = "Sorcery",
   Artifact = "Artifact",
-  Land = "Land"
+  Land = "Land",
 }
 
 /**
@@ -33,7 +33,7 @@ export interface ICardBase {
   name: string;
   manaCost: number;
   colour: CardColour;
-  type: CardType
+  type: CardType;
   rarity: CardRarity;
   text: string;
   value: number;

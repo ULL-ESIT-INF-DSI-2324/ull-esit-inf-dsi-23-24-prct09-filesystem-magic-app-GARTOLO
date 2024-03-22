@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import { ICard } from "../ICard.js";
 import { dir } from "../magic-app.js";
-import fs from 'fs';
+import fs from "fs";
 
 /**
  * Remove a card from the collection
@@ -16,7 +16,9 @@ export function removeCard(id: number, user: string) {
   }
 
   // Read the collection from the file
-  const collection = JSON.parse(fs.readFileSync(`./${dir}/${user}-collection.json`, 'utf-8'));
+  const collection = JSON.parse(
+    fs.readFileSync(`./${dir}/${user}-collection.json`, "utf-8"),
+  );
 
   // Check if the card exists
   const cardIndex = collection.findIndex((c: ICard) => c.id === id);
@@ -29,7 +31,10 @@ export function removeCard(id: number, user: string) {
   collection.splice(cardIndex, 1);
 
   // Write the collection back to the file
-  fs.writeFileSync(`./${dir}/${user}-collection.json`, JSON.stringify(collection, null, 2));
+  fs.writeFileSync(
+    `./${dir}/${user}-collection.json`,
+    JSON.stringify(collection, null, 2),
+  );
 
   console.log(chalk.green("Card removed from the", user, "collection."));
 }

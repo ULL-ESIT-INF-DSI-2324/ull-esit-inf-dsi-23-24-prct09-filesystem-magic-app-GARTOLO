@@ -1,5 +1,9 @@
-import {ICard} from "../ICard.js";
+import { ICard } from "../ICard.js";
 
+/**
+ * Print the card details to the console, formatted
+ * @param card - The card to print
+ */
 export function printCard(card: ICard) {
   //TODO: Format the output
   console.log("Card ID: " + card.id);
