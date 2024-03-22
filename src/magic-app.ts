@@ -2,29 +2,10 @@ import yargs, {CommandModule} from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import {addCommand} from "./functions/addCommand.js";
 import {updateCommand} from "./functions/updateCommand.js";
+import { removeCommand } from './functions/removeCommand.js';
 
 // Configure the directory for the card collection
 export const dir = './CardsCollection';
-
-const removeCommand: CommandModule = {
-  command: 'remove',
-  describe: 'Remove a card from the collection',
-  builder: {
-    user: {
-      description: 'User name',
-      type: 'string',
-      demandOption: true
-    },
-    id: {
-      description: 'Card ID',
-      type: 'number',
-      demandOption: true
-    }
-  },
-  handler: (argv) => {
-    console.log("Remove card with ID: " + argv.id + " for user: " + argv.user);
-  }
-}
 
 const listCommand: CommandModule = {
   command: 'list',
