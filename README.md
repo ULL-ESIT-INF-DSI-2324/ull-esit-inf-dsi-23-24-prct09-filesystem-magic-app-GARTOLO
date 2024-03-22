@@ -4,6 +4,11 @@
 
 Guillermo Emmanuel González Méndez - alu0101466941
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO?branch=main)
+
+[![Tests](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/actions/workflows/node.js.yml)
+
+
 ## Índice
 
 - [Introducción](#introducción)
@@ -21,12 +26,10 @@ Guillermo Emmanuel González Méndez - alu0101466941
 
 - Como curiosidad, a partir de la [versión 21.7.0](https://nodejs.org/en/blog/release/v21.7.0) de Node.js, se ha añadido `styleText`, para añadir estilos a los textos de la consola, de forma nativa por lo que no es necesario instalar ningún paquete adicional. Estos cambios además serán incluidos en la versión 22 de mediados de abril, que será LTS.
 
-### Ejercicio 1
-
-### Ejercicio 2
-
 ## Modificación
 
 ## Conclusiones
 
 ## Bibliografía
+- [Chalk](https://www.npmjs.com/package/chalk)
+- [Node FS](https://nodejs.org/docs/latest/api/fs.html)
