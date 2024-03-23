@@ -43,6 +43,11 @@ export function createICard(
     throw new Error("Invalid rarity");
   }
 
+  // Check if Mana cost is a positive number
+  if (mana_cost < 0) {
+    throw new Error("Invalid mana cost");
+  }
+
   let card: ICard;
   // Create the card depending on the type
   if (type === CardType.Creature) {
