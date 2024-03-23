@@ -1,19 +1,9 @@
 import { expect } from "chai";
 import { createICard } from "../../src/functions/createICard.js";
 import { ICard } from "../../src/ICard.js";
-import { dir } from "../../src/magic-app.js";
-import fs from "fs";
 
-const user: string = "test-user";
-
-describe("FileManager", () => {
+describe("Create Card", () => {
   let card: ICard;
-  // Delete the user directory
-  before(() => {
-    if (fs.existsSync(`${dir}/${user}`)) {
-      fs.rmSync(`${dir}/${user}`, { recursive: true });
-    }
-  });
   it("should create a new card", () => {
     card = createICard(
       1,

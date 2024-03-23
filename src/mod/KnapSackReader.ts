@@ -33,11 +33,11 @@ export abstract class KnapSackReader {
    * @returns two arrays with the benefits and wheights
    */
   protected solve() {
-    console.log("Capacity on solve JSON:", this.capacity);
-    console.log("N on solve JSON:", this.elementsNumber);
+    // console.log("Capacity on solve JSON:", this.capacity);
+    // console.log("N on solve JSON:", this.elementsNumber);
     console.log(getKnapSack(this.capacity, this.benefits, this.wheights));
 
-    console.log("Finish solve");
+    // console.log("Finish solve");
     return [this.wheightsSolution, this.benefitsSolution];
   }
 

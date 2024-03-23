@@ -49,7 +49,7 @@ Tal y como se requería en la práctica, hemos hecho uso del paquete `chalk` par
 
 - Como curiosidad, a partir de la [versión 21.7.0](https://nodejs.org/en/blog/release/v21.7.0) de Node.js, se ha añadido `styleText`, para añadir estilos a los textos de la consola, de forma nativa por lo que no es necesario instalar ningún paquete adicional. Estos cambios además serán incluidos en la versión 22 de mediados de abril, que será LTS.
 
-Por último, hemos realizado tests para comprobar los errores de la función createCard, mientras que el resto de funciones no han sido testeadas, ya que no devuelven nada, simplemente imprimen por pantalla. Es por esto que el informe de cobertura de los tests no es tan alto.
+Por último, hemos realizado tests para comprobar los errores de la función createCard, y hemos utilizado la librería `sinon` para leer los mensajes por consola de cada una de las funciones de la aplicación.
 
 ## Conclusiones
 
