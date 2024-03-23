@@ -8,6 +8,7 @@ Guillermo Emmanuel González Méndez - alu0101466941
 
 [![Tests](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/actions/workflows/node.js.yml)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2324_ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2324_ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO)
 
 ## Índice
 
@@ -44,8 +45,6 @@ Cada carta se guarda en un archivo diferente, con el ID de la carta como nombre 
 Tal y como se requería en la práctica, hemos hecho uso del paquete `chalk` para darle color a la salida de la consola. Los errores se mostrarán en rojo y los mensajes de éxito en verde, además de algún mensaje de información en azul. 
 
 - Como curiosidad, a partir de la [versión 21.7.0](https://nodejs.org/en/blog/release/v21.7.0) de Node.js, se ha añadido `styleText`, para añadir estilos a los textos de la consola, de forma nativa por lo que no es necesario instalar ningún paquete adicional. Estos cambios además serán incluidos en la versión 22 de mediados de abril, que será LTS.
-
-## Modificación
 
 ## Conclusiones
 En esta práctica hemos aprendido a utilizar el módulo `fs` de Node.js para leer y escribir en ficheros JSON, a utilizar `yargs` para gestionar los argumentos de la línea de comandos y a utilizar `chalk` para formatear la salida de la consola. Son módulos muy útiles y sencillos de utilizar que nos permiten realizar aplicaciones sencillas aunque en algunos casos, como en el de `fs`, mucho más escalables y complejas.
