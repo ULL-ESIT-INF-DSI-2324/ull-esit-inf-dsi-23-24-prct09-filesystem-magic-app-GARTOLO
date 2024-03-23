@@ -1,7 +1,7 @@
-import { expect } from 'chai';
-import {createICard} from "../../src/functions/createICard.js";
-import { ICard } from '../../src/ICard.js';
-import {dir} from "../../src/magic-app.js";
+import { expect } from "chai";
+import { createICard } from "../../src/functions/createICard.js";
+import { ICard } from "../../src/ICard.js";
+import { dir } from "../../src/magic-app.js";
 import fs from "fs";
 
 const user: string = "test-user";
@@ -23,7 +23,8 @@ describe("FileManager", () => {
       "Sorcery",
       "Common",
       "test-text",
-      0);
+      0,
+    );
     expect(card).to.deep.equal({
       id: 1,
       name: "test-card",
@@ -36,48 +37,60 @@ describe("FileManager", () => {
     });
   });
   it("should throw an error if the colour is not valid", () => {
-    expect(() => createICard(
-      1,
-      "test-card",
-      1,
-      "Invalid",
-      "Sorcery",
-      "Common",
-      "test-text",
-      0)).to.throw("Invalid colour");
+    expect(() =>
+      createICard(
+        1,
+        "test-card",
+        1,
+        "Invalid",
+        "Sorcery",
+        "Common",
+        "test-text",
+        0,
+      ),
+    ).to.throw("Invalid colour");
   });
 
   it("should throw an error if the type is not valid", () => {
-    expect(() => createICard(
-      1,
-      "test-card",
-      1,
-      "Green",
-      "Invalid",
-      "Common",
-      "test-text",
-      0)).to.throw("Invalid type");
+    expect(() =>
+      createICard(
+        1,
+        "test-card",
+        1,
+        "Green",
+        "Invalid",
+        "Common",
+        "test-text",
+        0,
+      ),
+    ).to.throw("Invalid type");
   });
   it("should throw an error if the rarity is not valid", () => {
-    expect(() => createICard(
-      1,
-      "test-card",
-      1,
-      "Green",
-      "Sorcery",
-      "Invalid",
-      "test-text",
-      0)).to.throw("Invalid rarity");
+    expect(() =>
+      createICard(
+        1,
+        "test-card",
+        1,
+        "Green",
+        "Sorcery",
+        "Invalid",
+        "test-text",
+        0,
+      ),
+    ).to.throw("Invalid rarity");
   });
   it("should throw an error if the mana cost is negative", () => {
-    expect(() => createICard(
-      1,
-      "test-card",
-      -1,
-      "Green",
-      "Sorcery",
-      "Common",
-      "test-text",
-      0)).to.throw("Invalid mana cost");
+    expect(() =>
+      createICard(
+        1,
+        "test-card",
+        -1,
+        "Green",
+        "Sorcery",
+        "Common",
+        "test-text",
+        0,
+      ),
+    ).to.throw("Invalid mana cost");
   });
 });

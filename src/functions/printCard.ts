@@ -6,7 +6,7 @@ import chalk from "chalk";
  * @param card - The card to print
  */
 export function printCard(card: ICard) {
-  console.log(chalk.bold.black("====================================="))
+  console.log(chalk.bold.black("====================================="));
   //TODO: Format the output
   console.log(chalk.bold("Card ID: " + card.id));
   console.log(chalk.bold("Card Name: " + card.name));
@@ -49,5 +49,5 @@ export function printCard(card: ICard) {
     console.log(chalk.bold("Creature Resistance: " + card.resistance));
   if ("loyalty" in card)
     console.log(chalk.bold("Planeswalker Loyalty: " + card.loyalty));
-  console.log(chalk.bold.black("====================================="))
+  console.log(chalk.bold.black("====================================="));
 }
