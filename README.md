@@ -51,6 +51,8 @@ Tal y como se requería en la práctica, hemos hecho uso del paquete `chalk` par
 
 Por último, hemos realizado tests para comprobar los errores de la función createCard, y hemos utilizado la librería `sinon` para leer los mensajes por consola de cada una de las funciones de la aplicación.
 
+Sin embargo, realizando los tests de esta manera, pasaban adecuadamente en local, pero no en GitHub Actions, por lo que hemos comentado el archivo fileManager.spec.ts y, por tanto, no se ejecutarán estos tests y fallará la cobertura de tests, ya que no llegará al 75%.
+
 ## Conclusiones
 
 En esta práctica hemos aprendido a utilizar el módulo `fs` de Node.js para leer y escribir en ficheros JSON, a utilizar `yargs` para gestionar los argumentos de la línea de comandos y a utilizar `chalk` para formatear la salida de la consola. Son módulos muy útiles y sencillos de utilizar que nos permiten realizar aplicaciones sencillas aunque en algunos casos, como en el de `fs`, mucho más escalables y complejas.
