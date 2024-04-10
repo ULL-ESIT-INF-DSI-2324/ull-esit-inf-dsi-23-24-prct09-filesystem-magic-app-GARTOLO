@@ -21,7 +21,11 @@
       document.documentElement.dataset.theme =
         localStorage.getItem("tsd-theme") || "os";
       document.body.style.display = "none";
-      setTimeout(() => document.body.style.removeProperty("display"), 500);
+      setTimeout(
+        () =>
+          app ? app.showPage() : document.body.style.removeProperty("display"),
+        500,
+      );
     </script>
     <header class="tsd-page-toolbar">
       <div class="tsd-toolbar-contents container">
@@ -69,7 +73,7 @@
             <li>
               Defined in
               <a
-                href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/functions/addCommand.ts#L1"
+                href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/functions/addCommand.ts#L1"
                 >functions/addCommand.ts:1</a
               >
             </li>

@@ -21,7 +21,11 @@
       document.documentElement.dataset.theme =
         localStorage.getItem("tsd-theme") || "os";
       document.body.style.display = "none";
-      setTimeout(() => document.body.style.removeProperty("display"), 500);
+      setTimeout(
+        () =>
+          app ? app.showPage() : document.body.style.removeProperty("display"),
+        500,
+      );
     </script>
     <header class="tsd-page-toolbar">
       <div class="tsd-toolbar-contents container">
@@ -77,7 +81,8 @@
               <a id="listCollection" class="tsd-anchor"></a
               ><span class="tsd-kind-call-signature">list<wbr />Collection</span
               ><span class="tsd-signature-symbol">(</span
-              ><span class="tsd-kind-parameter">user</span
+              ><span class="tsd-kind-parameter">user</span>,
+              <span class="tsd-kind-parameter">callback</span
               ><span class="tsd-signature-symbol">)</span
               ><span class="tsd-signature-symbol">: </span
               ><span class="tsd-signature-type">void</span
@@ -106,6 +111,75 @@
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                   </li>
+                  <li>
+                    <span
+                      ><span class="tsd-kind-parameter">callback</span>:
+                      <span class="tsd-signature-symbol">(</span
+                      ><span class="tsd-signature-symbol">(</span
+                      ><span class="tsd-kind-parameter">err</span>,
+                      <span class="tsd-kind-parameter">data</span
+                      ><span class="tsd-signature-symbol">)</span
+                      ><span class="tsd-signature-symbol"> =&gt; </span
+                      ><span class="tsd-signature-type">void</span
+                      ><span class="tsd-signature-symbol">)</span></span
+                    >
+                    <div class="tsd-comment tsd-typography"></div>
+                    <ul class="tsd-parameters">
+                      <li class="tsd-parameter-signature">
+                        <ul class="tsd-signatures">
+                          <li class="tsd-signature">
+                            <span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-kind-parameter">err</span>,
+                            <span class="tsd-kind-parameter">data</span
+                            ><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">: </span
+                            ><span class="tsd-signature-type">void</span>
+                          </li>
+                          <li class="tsd-description">
+                            <div class="tsd-parameters">
+                              <h4 class="tsd-parameters-title">Parameters</h4>
+                              <ul class="tsd-parameter-list">
+                                <li>
+                                  <span
+                                    ><span class="tsd-kind-parameter">err</span
+                                    >:
+                                    <span class="tsd-signature-type"
+                                      >undefined</span
+                                    ><span class="tsd-signature-symbol">
+                                      | </span
+                                    ><span class="tsd-signature-type"
+                                      >string</span
+                                    ></span
+                                  >
+                                </li>
+                                <li>
+                                  <span
+                                    ><span class="tsd-kind-parameter">data</span
+                                    >:
+                                    <span class="tsd-signature-type"
+                                      >undefined</span
+                                    ><span class="tsd-signature-symbol">
+                                      | </span
+                                    ><a
+                                      href="../types/ICard.ICard.html"
+                                      class="tsd-signature-type tsd-kind-type-alias"
+                                      >ICard</a
+                                    ><span class="tsd-signature-symbol"
+                                      >[]</span
+                                    ></span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <h4 class="tsd-returns-title">
+                              Returns
+                              <span class="tsd-signature-type">void</span>
+                            </h4>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
               <h4 class="tsd-returns-title">
@@ -117,8 +191,8 @@
                   <li>
                     Defined in
                     <a
-                      href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/fileManager/listCollection.ts#L11"
-                      >fileManager/listCollection.ts:11</a
+                      href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/fileManager/listCollection.ts#L10"
+                      >fileManager/listCollection.ts:10</a
                     >
                   </li>
                 </ul>

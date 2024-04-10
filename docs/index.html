@@ -21,7 +21,11 @@
       document.documentElement.dataset.theme =
         localStorage.getItem("tsd-theme") || "os";
       document.body.style.display = "none";
-      setTimeout(() => document.body.style.removeProperty("display"), 500);
+      setTimeout(
+        () =>
+          app ? app.showPage() : document.body.style.removeProperty("display"),
+        500,
+      );
     </script>
     <header class="tsd-page-toolbar">
       <div class="tsd-toolbar-contents container">
@@ -225,10 +229,16 @@
           </ul>
           <p>
             Por último, hemos realizado tests para comprobar los errores de la
-            función createCard, mientras que el resto de funciones no han sido
-            testeadas, ya que no devuelven nada, simplemente imprimen por
-            pantalla. Es por esto que el informe de cobertura de los tests no es
-            tan alto.
+            función createCard, y hemos utilizado la librería
+            <code>sinon</code> para leer los mensajes por consola de cada una de
+            las funciones de la aplicación.
+          </p>
+          <p>
+            Sin embargo, realizando los tests de esta manera, pasaban
+            adecuadamente en local, pero no en GitHub Actions, por lo que hemos
+            comentado el archivo fileManager.spec.ts y, por tanto, no se
+            ejecutarán estos tests y fallará la cobertura de tests, ya que no
+            llegará al 75%.
           </p>
           <a id="md:conclusiones" class="tsd-anchor"></a>
           <h2><a href="#md:conclusiones">Conclusiones</a></h2>
@@ -420,49 +430,33 @@
               </h3>
             </summary>
             <div class="tsd-accordion-details">
+              <a
+                href="#md:práctica-9---aplicación-para-coleccionistas-de-cartas-magic"
+                ><span
+                  >Práctica 9 -<wbr /> <wbr />Aplicación para coleccionistas de
+                  <wbr />Cartas <wbr />Magic</span
+                ></a
+              >
               <ul>
                 <li>
-                  <ul>
-                    <li>
-                      <a
-                        href="#md:práctica-9---aplicación-para-coleccionistas-de-cartas-magic"
-                        ><span
-                          >Práctica 9 -<wbr /> <wbr />Aplicación para
-                          coleccionistas de <wbr />Cartas <wbr />Magic</span
-                        ></a
-                      >
-                    </li>
-                    <li>
-                      <ul>
-                        <li>
-                          <a href="#md:índice"><span>Índice</span></a>
-                        </li>
-                        <li>
-                          <a href="#md:introducción"
-                            ><span>Introducción</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href="#md:objetivos"><span>Objetivos</span></a>
-                        </li>
-                        <li>
-                          <a href="#md:desarrollo-de-la-práctica"
-                            ><span>Desarrollo de la práctica</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href="#md:conclusiones"
-                            ><span>Conclusiones</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href="#md:bibliografía"
-                            ><span>Bibliografía</span></a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <a href="#md:índice"><span>Índice</span></a>
+                </li>
+                <li>
+                  <a href="#md:introducción"><span>Introducción</span></a>
+                </li>
+                <li>
+                  <a href="#md:objetivos"><span>Objetivos</span></a>
+                </li>
+                <li>
+                  <a href="#md:desarrollo-de-la-práctica"
+                    ><span>Desarrollo de la práctica</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#md:conclusiones"><span>Conclusiones</span></a>
+                </li>
+                <li>
+                  <a href="#md:bibliografía"><span>Bibliografía</span></a>
                 </li>
               </ul>
             </div>
