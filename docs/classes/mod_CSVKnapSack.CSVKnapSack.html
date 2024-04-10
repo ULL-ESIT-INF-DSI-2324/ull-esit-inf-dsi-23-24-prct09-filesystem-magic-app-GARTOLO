@@ -21,7 +21,11 @@
       document.documentElement.dataset.theme =
         localStorage.getItem("tsd-theme") || "os";
       document.body.style.display = "none";
-      setTimeout(() => document.body.style.removeProperty("display"), 500);
+      setTimeout(
+        () =>
+          app ? app.showPage() : document.body.style.removeProperty("display"),
+        500,
+      );
     </script>
     <header class="tsd-page-toolbar">
       <div class="tsd-toolbar-contents container">
@@ -99,7 +103,7 @@
             <li>
               Defined in
               <a
-                href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/CSVKnapSack.ts#L4"
+                href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/CSVKnapSack.ts#L4"
                 >mod/CSVKnapSack.ts:4</a
               >
             </li>
@@ -301,7 +305,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/CSVKnapSack.ts#L7"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/CSVKnapSack.ts#L7"
                         >mod/CSVKnapSack.ts:7</a
                       >
                     </li>
@@ -347,7 +351,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L14"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L14"
                     >mod/KnapSackReader.ts:14</a
                   >
                 </li>
@@ -389,7 +393,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L8"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L8"
                     >mod/KnapSackReader.ts:8</a
                   >
                 </li>
@@ -429,7 +433,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L11"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L11"
                     >mod/KnapSackReader.ts:11</a
                   >
                 </li>
@@ -470,7 +474,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L12"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L12"
                     >mod/KnapSackReader.ts:12</a
                   >
                 </li>
@@ -499,7 +503,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/CSVKnapSack.ts#L5"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/CSVKnapSack.ts#L5"
                     >mod/CSVKnapSack.ts:5</a
                   >
                 </li>
@@ -540,7 +544,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L13"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L13"
                     >mod/KnapSackReader.ts:13</a
                   >
                 </li>
@@ -582,7 +586,7 @@
                 <li>
                   Defined in
                   <a
-                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L7"
+                    href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L7"
                     >mod/KnapSackReader.ts:7</a
                   >
                 </li>
@@ -645,7 +649,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/CSVKnapSack.ts#L15"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/CSVKnapSack.ts#L15"
                         >mod/CSVKnapSack.ts:15</a
                       >
                     </li>
@@ -705,7 +709,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L24"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L24"
                         >mod/KnapSackReader.ts:24</a
                       >
                     </li>
@@ -771,7 +775,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L35"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L35"
                         >mod/KnapSackReader.ts:35</a
                       >
                     </li>
@@ -829,7 +833,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L49"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L49"
                         >mod/KnapSackReader.ts:49</a
                       >
                     </li>
@@ -883,7 +887,7 @@
                     <li>
                       Defined in
                       <a
-                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/6313cd8/src/mod/KnapSackReader.ts#L50"
+                        href="https://github.com/ULL-ESIT-INF-DSI-2324/ull-esit-inf-dsi-23-24-prct09-filesystem-magic-app-GARTOLO/blob/ea6bb9e/src/mod/KnapSackReader.ts#L50"
                         >mod/KnapSackReader.ts:50</a
                       >
                     </li>
@@ -1062,105 +1066,65 @@
               </h3>
             </summary>
             <div class="tsd-accordion-details">
-              <ul>
-                <li>
-                  <a href="#constructor" class=""
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-512"></use></svg
-                    ><span>constructor</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#benefits" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>benefits</span></a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#benefitsSolution"
-                    class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>benefits<wbr />Solution</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#capacity" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>capacity</span></a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#elementsNumber"
-                    class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>elements<wbr />Number</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#filename" class=""
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>filename</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#wheights" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>wheights</span></a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#wheightsSolution"
-                    class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-1024"></use></svg
-                    ><span>wheights<wbr />Solution</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#procesar" class="tsd-is-protected"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-2048"></use></svg
-                    ><span>procesar</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#run" class="tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-2048"></use></svg
-                    ><span>run</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#solve" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-2048"></use></svg
-                    ><span>solve</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#test" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-2048"></use></svg
-                    ><span>test</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#test2" class="tsd-is-protected tsd-is-inherited"
-                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                      <use href="../assets/icons.svg#icon-2048"></use></svg
-                    ><span>test2</span></a
-                  >
-                </li>
-              </ul>
+              <a href="#constructor" class=""
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-512"></use></svg
+                ><span>constructor</span></a
+              ><a href="#benefits" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>benefits</span></a
+              ><a
+                href="#benefitsSolution"
+                class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>benefits<wbr />Solution</span></a
+              ><a href="#capacity" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>capacity</span></a
+              ><a
+                href="#elementsNumber"
+                class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>elements<wbr />Number</span></a
+              ><a href="#filename" class=""
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>filename</span></a
+              ><a href="#wheights" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>wheights</span></a
+              ><a
+                href="#wheightsSolution"
+                class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-1024"></use></svg
+                ><span>wheights<wbr />Solution</span></a
+              ><a href="#procesar" class="tsd-is-protected"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-2048"></use></svg
+                ><span>procesar</span></a
+              ><a href="#run" class="tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-2048"></use></svg
+                ><span>run</span></a
+              ><a href="#solve" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-2048"></use></svg
+                ><span>solve</span></a
+              ><a href="#test" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-2048"></use></svg
+                ><span>test</span></a
+              ><a href="#test2" class="tsd-is-protected tsd-is-inherited"
+                ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use href="../assets/icons.svg#icon-2048"></use></svg
+                ><span>test2</span></a
+              >
             </div>
           </details>
         </div>

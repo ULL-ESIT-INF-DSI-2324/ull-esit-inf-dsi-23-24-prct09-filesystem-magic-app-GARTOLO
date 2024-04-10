@@ -1,29 +1,37 @@
-import chalk from "chalk";
-import { ICard } from "../ICard.js";
 import { dir } from "../magic-app.js";
-import fs from "fs";
+import fs, { constants } from "fs";
 
 /**
- * Remove a card from the collection
+ * Remove a card from the collection. Callback function
  * @param id of the card to remove
  * @param user name of the user
  */
-export function removeCard(id: number, user: string) {
+export const removeCard = (
+  id: number,
+  user: string,
+  callback: (err: string | undefined, data: string | undefined) => void,
+) => {
   const userDir = `${dir}/${user}`;
+
   // Check if the user directory exists
-  if (!fs.existsSync(userDir)) {
-    console.error(chalk.red.bold("User does not exist"));
-    process.exit(1);
-  }
-
-  // Check if the card exists
-  if (!fs.existsSync(`./${userDir}/${id}.json`)) {
-    console.error(chalk.red.bold("Card does not exist"));
-    process.exit(1);
-  }
-
-  // Remove the card file
-  fs.unlinkSync(`./${userDir}/${id}.json`);
-
-  console.log(chalk.green("Card removed from the", user, "collection."));
-}
+  fs.readdir(userDir, (err) => {
+    if (err) {
+      callback("Error on read dir. User does not exists", undefined);
+    } else {
+      fs.access(`./${userDir}/${id}.json`, constants.F_OK, (err) => {
+        if (err)
+          callback("Error checking file. Card does not exists.", undefined);
+        else {
+          fs.unlink(`./${userDir}/${id}.json`, (err) => {
+            if (err) callback("Error deleting the file.", undefined);
+            else
+              callback(
+                "Card removed from the" + user + " collection.",
+                undefined,
+              );
+          });
+        }
+      });
+    }
+  });
+};

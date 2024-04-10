@@ -1652,7 +1652,8 @@
         window.addEventListener("hashchange", () =>
           this.ensureFocusedElementVisible(),
         ),
-        document.body.style.display || this.scrollToHash();
+        document.body.style.display ||
+          (this.scrollToHash(), this.updateIndexVisibility());
     }
     createComponents(e) {
       re.forEach((n) => {
@@ -1668,7 +1669,9 @@
     }
     showPage() {
       document.body.style.display &&
-        (document.body.style.removeProperty("display"), this.scrollToHash());
+        (document.body.style.removeProperty("display"),
+        this.scrollToHash(),
+        this.updateIndexVisibility());
     }
     scrollToHash() {
       if (location.hash) {
@@ -1688,6 +1691,19 @@
           document.documentElement.clientHeight / 4;
         document.querySelector(".site-menu").scrollTop = r;
       }
+    }
+    updateIndexVisibility() {
+      let e = document.querySelector(".tsd-index-content"),
+        n = e?.open;
+      e && (e.open = !0),
+        document.querySelectorAll(".tsd-index-section").forEach((r) => {
+          r.style.display = "block";
+          let i = Array.from(r.querySelectorAll(".tsd-index-link")).every(
+            (s) => s.offsetParent == null,
+          );
+          r.style.display = i ? "none" : "block";
+        }),
+        e && (e.open = n);
     }
     ensureFocusedElementVisible() {
       if (
@@ -2008,7 +2024,7 @@
         this.setLocalStorage(this.fromLocalStorage()),
         (ye.innerHTML += `html:not(.${this.key}) .tsd-is-${this.el.name} { display: none; }
 `),
-        this.updateIndexHeadingVisibility();
+        this.app.updateIndexVisibility();
     }
     fromLocalStorage() {
       let e = Q.getItem(this.key);
@@ -2023,20 +2039,7 @@
       (this.el.checked = this.value),
         document.documentElement.classList.toggle(this.key, this.value),
         this.app.filterChanged(),
-        this.updateIndexHeadingVisibility();
-    }
-    updateIndexHeadingVisibility() {
-      let e = document.querySelector(".tsd-index-content"),
-        n = e?.open;
-      e && (e.open = !0),
-        document.querySelectorAll(".tsd-index-section").forEach((r) => {
-          r.style.display = "block";
-          let i = Array.from(r.querySelectorAll(".tsd-index-link")).every(
-            (s) => s.offsetParent == null,
-          );
-          r.style.display = i ? "none" : "block";
-        }),
-        e && (e.open = n);
+        this.app.updateIndexVisibility();
     }
   };
   var Z = class extends I {

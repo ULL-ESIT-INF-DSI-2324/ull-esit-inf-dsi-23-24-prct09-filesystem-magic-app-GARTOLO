@@ -27,6 +27,9 @@ export const removeCommand: CommandModule = {
       ),
     );
 
-    removeCard(Number(argv.id), String(argv.user));
+    removeCard(Number(argv.id), String(argv.user), (err, data) => {
+      if (err) console.log(chalk.bold.red("Error:", err));
+      else console.log(chalk.green.bold("Success:", data));
+    });
   },
 };
