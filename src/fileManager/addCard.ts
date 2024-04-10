@@ -16,7 +16,10 @@ export function addCard(card: ICard, user: string) {
 
   // Create the card file if it doesn't exist
   if (!fs.existsSync(`./${userDir}/${card.id}.json`)) {
-    fs.writeFileSync(`./${userDir}/${card.id}.json`, JSON.stringify(card, null, 2));
+    fs.writeFileSync(
+      `./${userDir}/${card.id}.json`,
+      JSON.stringify(card, null, 2),
+    );
     console.log(chalk.green.bold("Card added to the", user, "collection."));
   } else {
     console.error(chalk.red.bold("Card already exists"));

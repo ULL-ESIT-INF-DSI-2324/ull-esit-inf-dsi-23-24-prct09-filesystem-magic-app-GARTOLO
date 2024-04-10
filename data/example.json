@@ -1,31 +1,31 @@
 {
-    "capacidad": 15,
-    "numElementos": 5,
-    "elementos": [
-        {
-            "numElemento": 0,
-            "peso": 12,
-            "beneficio": 4
-        },
-        {
-            "numElemento": 1,
-            "peso": 2,
-            "beneficio": 2
-        },
-        {
-            "numElemento": 2,
-            "peso": 1,
-            "beneficio": 1
-        },
-        {
-            "numElemento": 3,
-            "peso": 1,
-            "beneficio": 2
-        },
-        {
-            "numElemento": 4,
-            "peso": 4,
-            "beneficio": 10
-        }
-    ]
+  "capacidad": 15,
+  "numElementos": 5,
+  "elementos": [
+    {
+      "numElemento": 0,
+      "peso": 12,
+      "beneficio": 4
+    },
+    {
+      "numElemento": 1,
+      "peso": 2,
+      "beneficio": 2
+    },
+    {
+      "numElemento": 2,
+      "peso": 1,
+      "beneficio": 1
+    },
+    {
+      "numElemento": 3,
+      "peso": 1,
+      "beneficio": 2
+    },
+    {
+      "numElemento": 4,
+      "peso": 4,
+      "beneficio": 10
+    }
+  ]
 }
