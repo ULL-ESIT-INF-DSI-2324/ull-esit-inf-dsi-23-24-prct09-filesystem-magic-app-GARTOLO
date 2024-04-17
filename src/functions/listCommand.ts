@@ -20,21 +20,15 @@ export const listCommand: CommandModule = {
   handler: (argv) => {
     console.log(chalk.blue("Listing all cards for user: " + argv.user));
 
-    listCollection(String(argv.user), (err, data) => {
-      if (err) console.log(chalk.bold.red(err));
-      else if (data) {
-        // console.log("Data:", data)
+    listCollection(String(argv.user)).then((data) => {
+      if (data.length === 0) console.log(chalk.yellow.bold("No cards in the collection"));
 
-        if (data.length === 0) {
-          console.log(chalk.yellow.bold("No cards in the collection"));
-          return;
-        }
-
-        data.forEach((card: ICard) => {
-          printCard(card);
-          console.log();
-        });
-      }
+      data.forEach((card: ICard) => {
+        printCard(card);
+        console.log();
+      })
+    }).catch((e)=> {
+      console.log(chalk.bold.red(e));
     });
   },
 };
