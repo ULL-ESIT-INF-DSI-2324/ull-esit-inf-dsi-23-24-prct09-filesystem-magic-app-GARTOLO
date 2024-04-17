@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { listCollection } from "../../src/fileManager/listCollection.js";
-import { removeCard } from "../../src/fileManager/removeCard.js";
+import { listCollection } from "../../src/fileManager/listCollection_oldp11.js";
+import { removeCard } from "../../src/fileManager/removeCard_oldp11.js";
 
 describe("Async functions collection", () => {
   it("List non exist user collection should return an error", (done) => {
